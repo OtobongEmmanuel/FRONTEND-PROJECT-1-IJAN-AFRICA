@@ -1,0 +1,487 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 180px;
+    background-color: #ffe4b5;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000;
+}
+
+.nav {
+    display: flex;
+    gap: 40px;
+    position: relative;
+}
+
+.nav > a,
+.dropdown-toggle {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    position: relative;
+}
+
+.nav > a:hover,
+.dropdown:hover .dropdown-toggle {
+    color: #000;
+}
+
+.nav .active {
+    font-weight: bold;
+    color: #000;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: '⮟';
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    min-width: 180px;
+    padding: 10px 0;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background-color: #c2c0c0;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  background: url("./images/hero_bg_1.jpeg")    
+              center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {                     /* dark overlay for text legibility    */
+  content: "";
+  position: absolute;
+  inset: 100px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.355);
+}
+
+.hero-inner {
+  position: relative;               /* escape overlay */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-copy h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 65px;
+  line-height: 1.15;
+  margin: 0 0 24px;
+  font-weight: 700;
+}
+
+.hero-copy {
+    margin-top: 50px;
+}
+
+.hero-copy p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  max-width: 450px;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* booking card */
+.booking-card {
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  padding: 40px 48px;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.booking-card h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  color: #333;
+  text-align: left;
+}
+
+.booking-card input {
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  outline: none;
+  transition: border 0.2s ease;
+}
+
+.booking-card input:focus {
+  border-color: #787777;
+}
+
+.booking-card button {
+  margin-top: 12px;
+  padding: 14px 24px;
+  font-weight: 500;
+  font-size: 1rem;
+  background: #ffe4b5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.booking-card button:hover {
+  background-color: #fbd084;
+}
+
+/* --- responsive stacking --- */
+@media (max-width: 980px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .booking-card {
+    max-width: 100%;
+  }
+}
+
+/* Practice Area */
+.practice-area {
+    background-color: #f3f3f3;
+    padding-bottom: 100px;
+}
+
+.practice-area-header {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 10px;
+}
+
+.practice-area-header h1{
+    font-weight: bolder;
+    font-family: "Playfair Display", serif;
+}
+
+.practice-area-span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #787777;
+}
+
+.practice-law {
+    display: flex;
+    gap: 40px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+    justify-content: center; 
+}
+
+.law-div {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    max-width: 350px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+    padding-right: 10px;
+    padding-left:30px ;
+}
+
+/* Down Booking */
+.down-booking {
+    display: flex;
+    padding: 80px 200px;
+    gap: 30px;
+}
+
+.down-booking-section {
+    color: #3e3e3e;
+    padding: 20px 50px;
+}
+
+.down-booking-section h3{
+    font-size: 30px;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+
+.down-booking-section-span {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+}
+
+.down-booking-section button {
+    margin-top: 12px;
+    padding: 14px 24px;
+    font-weight: 500;
+    font-size: 1rem;
+    background: #ffe4b5;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.down-booking-section button:hover {
+    background-color: #fbd084;
+}
+
+/* Customer Section */
+.customer-section {
+    background-color: #f3f3f3;
+    padding-bottom: 70px;
+}
+
+.customer-section-header {
+    text-align: center;
+    padding-top: 70px;
+    padding-bottom: 30px;
+}
+
+.customer-section h1 {
+    font-weight: bolder;
+    font-family: "Playfair Display", serif;
+
+}
+
+.customer-profile-section {
+    display: flex;
+    gap: 40px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    padding-bottom: 100px; 
+}
+
+.customer-profile {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background-color: #ffffff;
+    max-width: 350px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    padding-left:30px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 8px;
+}
+
+.customer-profile p{
+    padding-top: 10px;
+}
+
+.customer-profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.customer-name-tag {
+    padding-left: 10px;
+    padding-top: 10px;
+    line-height: 0.5;
+}
+
+.customer-name-tag h5 {
+    font-size: 17px
+
+}
+
+.customer-name-tag p {
+    color: #787777;
+}
+
+/* Legal Solutions Section */
+.legal-section {
+    display: flex;
+    background-color: #ffffff;
+    padding: 100px 200px;
+    gap: 40px;
+}
+
+.legal-section img {
+    width: 350px;
+    height: 500px;
+}
+
+.legal-section-info {
+    max-width: 330px;
+    color: #787777;
+    flex-wrap: wrap;
+}
+
+.legal-section-info h2 {
+    font-weight: 400;
+}
+
+.legal-span {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #353535;
+    font-weight: 600;
+}
+
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+}
+
+.legal-faq-section {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-title {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+
+.faq-title:hover {
+    color: #000;
+}
+
+.legal-faq {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    padding-bottom: 0px;
+    color: #555;
+    background: #f9f9f9;
+    cursor: default;
+}
+
+.legal-faq-section.first .legal-faq {
+    max-height: 250px;
+    padding: 15px 20px;
+}
+
+/* Footer Section*/
+.footer-background {
+    background-image: url('./images/footer_bg.jpeg');
+    min-height: 90vh;
+    position: relative;
+}
+
+.footer {
+    display: flex;    
+    flex-direction: row;
+    color: #ffffff;
+    padding: 150px 200px;
+    gap: 80px;
+}
+
+.footer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.footer h2 {
+    color: #ffffff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.footer a {
+    text-decoration: none;
+    color: #a09f9f;
+    line-height: 2.5;
+}
+
+.footer hr {
+    color: #ffffff;
+    font-weight: 900;
+}
+
+.about-us {
+    max-width: 300px;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 40px;
+  border-top: 1px solid #ffffff73;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #ffffff;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+  
+.copyright a {
+    text-decoration: none;
+    color: #ffe4b5;
+}
+
+.oty {
+    color: #ffe4b5;
+}
