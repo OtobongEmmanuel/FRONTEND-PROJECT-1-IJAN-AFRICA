@@ -192,17 +192,6 @@ body {
   background-color: #fbd084;
 }
 
-/* --- responsive stacking --- */
-@media (max-width: 980px) {
-  .hero-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .booking-card {
-    max-width: 100%;
-  }
-}
-
 /* Practice Area */
 .practice-area {
     background-color: #f3f3f3;
@@ -485,4 +474,110 @@ body {
 
 .oty {
     color: #ffe4b5;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 980px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .booking-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    flex-direction: column;
+    padding: 20px 40px;
+    text-align: center;
+  }
+
+  .hero::before {
+    inset: 0;
+    content: "";
+    position: absolute;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.355);
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+  }
+
+  .down-booking {
+    flex-direction: column;
+    padding: 40px 20px;
+    align-items: center;
+  }
+
+  .legal-section {
+    flex-direction: column;
+    padding: 40px 20px;
+    align-items: center;
+  }
+
+  .legal-section img {
+    width: 100%;
+    height: auto;
+  }
+
+  .footer {
+    flex-direction: column;
+    padding: 60px 20px;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .copyright {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-copy h1 {
+    font-size: 42px;
+  }
+
+  .hero::before {
+    inset: 0;
+    content: "";
+    position: absolute;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.355);
+  }
+
+  .booking-card {
+    padding: 20px;
+  }
+
+  .practice-law {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .customer-profile-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer h2 {
+    font-size: 18px;
+  }
 }
